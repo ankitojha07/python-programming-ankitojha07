@@ -1,5 +1,6 @@
 # Python Restart Roadmap (High-Level)
-- Think of this as Python for real-world engineering & AI-ready development.
+
+Think of this as Python for real-world engineering & AI-ready development.
 
 ## Phase 1: Core Python Foundations (Fast Refresh)
 
