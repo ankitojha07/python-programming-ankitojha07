@@ -1,5 +1,6 @@
 # All basics
 
+import numbers
 from re import match
 
 
@@ -49,3 +50,65 @@ while z>0:
 
 def add(a,b):
     return a+b
+
+# Keyword Arguments (Python Superpower)
+def create_user(name, role, active= True):
+    return {
+        "name":name,
+        "role":role,
+        "isActive":active
+    }
+
+user = create_user("Ankit", "ASC", False)
+user2 = create_user(role="ASC",name="Rohit", active=True)
+print(user)
+print(user2)
+
+# *args and **kwargs (Flexible Functions)
+## *args → multiple positional arguments
+def sum_all(*numbers):
+    return sum(numbers)
+
+print(sum_all(1,2,3,4,5))
+
+## **kwargs → key-value arguments
+def log_events(**data):
+    return data
+print(log_events(user="Ankit", action="login", role="ASC"))
+
+# Returning Multiple Values (Pythonic)
+def get_user():
+    name = "Test 1"
+    role = "Role 1"
+    return name, role
+
+name, role = get_user()
+print(name, role)
+
+# Function Annotations (Modern Python – 2026 Standard)
+def calculate_salary(base:int, bonus:int) -> int:
+    return base+bonus
+print(calculate_salary(1,2))
+
+def process_payment(amount:float, currency:str="INR") -> dict:
+    if amount <= 0:
+        return {"Status":"failed", "reason":"Invalid Amount"}
+    return{
+        "status":"success",
+        "amount":amount,
+        "currency":currency
+    }
+print(process_payment(500))
+print(process_payment(0))
+
+def register_user(name, role="user", **metaData):
+    return{
+        "name":name,
+        "role":role,
+        **metaData
+    }
+
+print(register_user("Ankit"))
+print(register_user("Ankit", "Tester"))
+print(register_user("Ankit","QA", email="ankit.ojha@leena.ai", age=24))
+print(register_user("Ankit", email="ankit.ojha@leena.ai", age=24))
