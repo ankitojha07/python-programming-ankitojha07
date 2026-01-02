@@ -112,3 +112,61 @@ print(register_user("Ankit"))
 print(register_user("Ankit", "Tester"))
 print(register_user("Ankit","QA", email="ankit.ojha@leena.ai", age=24))
 print(register_user("Ankit", email="ankit.ojha@leena.ai", age=24))
+
+# List in python - Ordered, Mutable (Most Used)
+nums = [1,2,3,4,5]
+nums.append(8)
+print(nums)
+
+nums.remove(5)
+print(nums)
+
+nums.pop()
+print(nums)
+
+# tuple - Ordered, Immutable
+coordinates = (10,20)
+x,y= coordinates
+print(x,y)
+
+# set – Unique, Unordered
+ids = {1, 2, 3, 3, 4}
+print(ids)
+
+ids.add(13)
+print(ids)
+
+ids.remove(1)
+print(ids)
+
+## powerful set logics
+a = {1,2,3}
+b = {3,4,5}
+print(a & b)
+print(a | b)
+print(a - b)
+
+# dict – Key-Value Store (MOST IMPORTANT)
+user = {
+    "name":"Ankit Ojha",
+    "role":"engineer",
+    "active":True
+}
+
+user["role"] = "Senior Engineer"
+print(user)
+
+user["experience"] = 4
+print(user)
+
+## Safe Access
+print(user.get("email")) # none if missing email
+print(user.get("role")) # Senior Engineer
+
+# Nested Structures (Real World)
+users = [
+    {"name": "Ankit", "role": "Engineer"},
+    {"name": "Rahul", "role": "Manager"}
+]
+
+print(users[1]["name"])
